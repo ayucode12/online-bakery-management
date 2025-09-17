@@ -1,79 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Online Bakery</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bakery Management Dashboard</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #fff8f0;
+      color: #333;
     }
-    .hero {
-      background: url('https://images.unsplash.com/photo-1542831371-d531d36971e6') no-repeat center center/cover;
-      color: white;
-      height: 60vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    header {
+      background-color: #f4a261;
+      padding: 20px;
       text-align: center;
+      color: white;
     }
-    .hero h1 {
-      font-size: 3rem;
+
+    nav {
+      background-color: #e76f51;
+      display: flex;
+      justify-content: space-around;
+      padding: 10px 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
       font-weight: bold;
+    }
+
+    section {
+      padding: 20px;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 15px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #e76f51;
+    }
+
+    footer {
+      background-color: #f4a261;
+      text-align: center;
+      padding: 10px;
+      color: white;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">🍰 Sweet Bakery</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-          <li class="nav-item"><a class="btn btn-warning" href="#">🛒 Cart</a></li>
-        </ul>
-      </div>
-    </div>
+  <header>
+    <h1>Sweet Crumbs Bakery Management</h1>
+    <p>Welcome to your all-in-one dashboard</p>
+  </header>
+
+  <nav>
+    <a href="#inventory">Inventory</a>
+    <a href="#orders">Orders</a>
+    <a href="#staff">Staff</a>
+    <a href="#analytics">Analytics</a>
   </nav>
 
-  <!-- Hero Section -->
-  <div class="hero">
-    <div>
-      <h1>Welcome to Sweet Bakery</h1>
-      <p>Freshly baked happiness, delivered to you!</p>
-      <a href="#products" class="btn btn-light mt-3">Shop Now</a>
+  <section id="inventory">
+    <h2>🍞 Inventory</h2>
+    <div class="dashboard">
+      <div class="card">
+        <h3>Flour</h3>
+        <p>120 kg available</p>
+      </div>
+      <div class="card">
+        <h3>Eggs</h3>
+        <p>300 units</p>
+      </div>
+      <div class="card">
+        <h3>Butter</h3>
+        <p>50 kg</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Products Section -->
-  <section id="products" class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Our Products</h2>
-      <div class="row">
-        <!-- Cake -->
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1606788075761-1a2b3efb62e8" class="card-img-top" alt="Cake">
-            <div class="card-body">
-              <h5 class="card-title">Chocolate Cake</h5>
-              <p class="card-text">Delicious chocolate cake with creamy frosting.</p>
-              <button class="btn btn-primary">Add to Cart</button>
-            </div>
-          </div>
-        </div>
-        <!-- Pastry -->
-        <div class="col-md-4">
-          <div class="card">
-            <img src="https://images.unsplash.com/photo-1617196034813-0fbc9b872d9b" class="card-img-top" alt="Pastry">
-            <div class="card-body">
-              <h5 class="card-title">Strawberry Pastry</h5>
-              <p class="card-text">Soft pastry topped with fresh strawberries.</p>
-              <button class="btn btn-primary">Add to Cart</button>
+  <section id="orders">
+    <h2>🧁 Orders</h2>
+    <div class="dashboard">
+      <div class="card">
+        <h3>Order #1023</h3>
+        <p>Chocolate Cake - 2 pcs</p>
+        <p>Status: Preparing</p>
+      </div>
+      <div class="card">
+        <h3>Order #1024</h3>
+        <p>Blueberry Muffins - 12 pcs</p>
+        <p>Status: Delivered</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="staff">
+    <h2>👩‍🍳 Staff</h2>
+    <div class="dashboard">
+      <div class="card">
+        <h3>Priya Sharma</h3>
+        <p>Head Baker</p>
+      </div>
+      <div class="card">
+        <h3>Ravi Verma</h3>
+        <p>Delivery Manager</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="analytics">
+    <h2>📊 Analytics</h2>
+    <div class="dashboard">
+      <div class="card">
+        <h3>Today's Sales</h3>
+        <p>₹12,500</p>
+      </div>
+      <div class="card">
+        <h3>Monthly Orders</h3>
+        <p>320 orders</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Sweet Crumbs Bakery | All rights reserved
+  </footer>
+
+</body>
+</html>
